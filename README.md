@@ -17,3 +17,8 @@ The objective is to create the favorites screen using data from a remote .json f
 - Airplane if product is imported (ndIc30InternationalSquare icon image)
 - Free shipping truck if product has free shipping (ndIc30FreeShippingSquare icon image)
 - You don't have to create the navigation bar at the bottom. The objective is to create the favorites screen using data from a remote .json file.
+
+# Rules:
+
+- The code must be written in Swift and the app must be compatible with iOS 9.0+.
+- We will evaluate UX/design, code quality and project organization (MVVM is expected - Clean Architecture is an extra).
