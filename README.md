@@ -2,8 +2,6 @@
 
 Challenge - iOS Developer
 
-Please find below the instructions to the test. I have added you to the Zeplin project, you’ll probably receive an e-mail in the minutes to come. Feel free to read the instructions below and ask all the questions you may have, I will be happy to clear all your doubts.
-
 The objective is to create the favorites screen using data from a remote .json file.
 
 # Assets:
