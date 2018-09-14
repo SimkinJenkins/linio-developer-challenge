@@ -8,7 +8,7 @@ Please find below the instructions to the test. I have added you to the Zeplin p
 
 The objective is to create the favorites screen using data from a remote .json file.
 
-Assets:
+# Assets:
 
 ·         The screen layout can be found at https://zpl.io/2970yda
 
@@ -16,11 +16,10 @@ Assets:
 
 ·         The .json file can be loaded from https://gist.githubusercontent.com/egteja/98ad43f47d40b0868d8a954385b5f83a/raw/5c00958f81f81d6ba0bb1b1469c905270e8cdfed/wishlist.json
 
-Description:
+# Description:
 
-·         The screen is composed of a header with the screen name (Favoritos) and two different sections.
-
-·         The first section displays a snapshot of each collection created by the user. Each snapshot should display the images for the 3 first products from each collection, the collection name and the quantity of items in that collection.
+- The screen is composed of a header with the screen name (Favoritos) and two different sections.
+- The first section displays a snapshot of each collection created by the user. Each snapshot should display the images for the 3 first products from each collection, the collection name and the quantity of items in that collection.
 
 ·         The second section must display all products, from all collections.
 
