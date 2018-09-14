@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		346E7FBD5B47BDF807AAF71F /* Pods_ios_challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE2AE20E4D45398201B9E81 /* Pods_ios_challenge.framework */; };
+		B5A4BB832EB09AFC5F6BA1E9 /* Pods_ios_challengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBE20D7E88AA3F7EABA36E7 /* Pods_ios_challengeTests.framework */; };
 		BCB7B0C2214BDC16000036EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7B0C1214BDC16000036EE /* AppDelegate.swift */; };
 		BCB7B0C9214BDC18000036EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB7B0C8214BDC18000036EE /* Assets.xcassets */; };
 		BCB7B0CC214BDC18000036EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB7B0CA214BDC18000036EE /* LaunchScreen.storyboard */; };
 		BCB7B0D7214BDC19000036EE /* ios_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7B0D6214BDC19000036EE /* ios_challengeTests.swift */; };
 		BCB7B0E2214BDC19000036EE /* ios_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7B0E1214BDC19000036EE /* ios_challengeUITests.swift */; };
+		D03B750BA8F85DCC17752938 /* Pods_ios_challengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E53F2721DC375B52C12B46 /* Pods_ios_challengeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FFFAD15BFDA9CF10B335034 /* Pods-ios-challengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-challengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-challengeTests/Pods-ios-challengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C89C1D21CF0B18A9BEE339C /* Pods-ios-challengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-challengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-challengeUITests/Pods-ios-challengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5FE2AE20E4D45398201B9E81 /* Pods_ios_challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EBE20D7E88AA3F7EABA36E7 /* Pods_ios_challengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_challengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E53F2721DC375B52C12B46 /* Pods_ios_challengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_challengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB210FE4FF21F85B45DCCABF /* Pods-ios-challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-challenge/Pods-ios-challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		B6CCA7B74C524184F35DACAC /* Pods-ios-challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-challenge/Pods-ios-challenge.release.xcconfig"; sourceTree = "<group>"; };
 		BCB7B0BE214BDC16000036EE /* ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB7B0C1214BDC16000036EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB7B0C8214BDC18000036EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +53,8 @@
 		BCB7B0DD214BDC19000036EE /* ios-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB7B0E1214BDC19000036EE /* ios_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_challengeUITests.swift; sourceTree = "<group>"; };
 		BCB7B0E3214BDC19000036EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDDC3533C94B8DED03ED7B0B /* Pods-ios-challengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-challengeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-challengeUITests/Pods-ios-challengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E94429704B22B8DB883590F7 /* Pods-ios-challengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-challengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-challengeTests/Pods-ios-challengeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				346E7FBD5B47BDF807AAF71F /* Pods_ios_challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A4BB832EB09AFC5F6BA1E9 /* Pods_ios_challengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,12 +78,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03B750BA8F85DCC17752938 /* Pods_ios_challengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F13727BA90422499F88441B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FE2AE20E4D45398201B9E81 /* Pods_ios_challenge.framework */,
+				6EBE20D7E88AA3F7EABA36E7 /* Pods_ios_challengeTests.framework */,
+				89E53F2721DC375B52C12B46 /* Pods_ios_challengeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B61660DA4A698703338C169B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB210FE4FF21F85B45DCCABF /* Pods-ios-challenge.debug.xcconfig */,
+				B6CCA7B74C524184F35DACAC /* Pods-ios-challenge.release.xcconfig */,
+				0FFFAD15BFDA9CF10B335034 /* Pods-ios-challengeTests.debug.xcconfig */,
+				E94429704B22B8DB883590F7 /* Pods-ios-challengeTests.release.xcconfig */,
+				CDDC3533C94B8DED03ED7B0B /* Pods-ios-challengeUITests.debug.xcconfig */,
+				4C89C1D21CF0B18A9BEE339C /* Pods-ios-challengeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BCB7B0B5214BDC15000036EE = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +115,8 @@
 				BCB7B0D5214BDC19000036EE /* ios-challengeTests */,
 				BCB7B0E0214BDC19000036EE /* ios-challengeUITests */,
 				BCB7B0BF214BDC16000036EE /* Products */,
+				B61660DA4A698703338C169B /* Pods */,
+				6F13727BA90422499F88441B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCB7B0E6214BDC19000036EE /* Build configuration list for PBXNativeTarget "ios-challenge" */;
 			buildPhases = (
+				E9549CADCFF40F4FCABE52FA /* [CP] Check Pods Manifest.lock */,
 				BCB7B0BA214BDC16000036EE /* Sources */,
 				BCB7B0BB214BDC16000036EE /* Frameworks */,
 				BCB7B0BC214BDC16000036EE /* Resources */,
@@ -143,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCB7B0E9214BDC19000036EE /* Build configuration list for PBXNativeTarget "ios-challengeTests" */;
 			buildPhases = (
+				FDBB114EFDA73ED94A1FA839 /* [CP] Check Pods Manifest.lock */,
 				BCB7B0CE214BDC19000036EE /* Sources */,
 				BCB7B0CF214BDC19000036EE /* Frameworks */,
 				BCB7B0D0214BDC19000036EE /* Resources */,
@@ -161,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCB7B0EC214BDC19000036EE /* Build configuration list for PBXNativeTarget "ios-challengeUITests" */;
 			buildPhases = (
+				F2F650224ABE1301CFE691C4 /* [CP] Check Pods Manifest.lock */,
 				BCB7B0D9214BDC19000036EE /* Sources */,
 				BCB7B0DA214BDC19000036EE /* Frameworks */,
 				BCB7B0DB214BDC19000036EE /* Resources */,
@@ -243,6 +286,63 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E9549CADCFF40F4FCABE52FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2F650224ABE1301CFE691C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-challengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDBB114EFDA73ED94A1FA839 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ios-challengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCB7B0BA214BDC16000036EE /* Sources */ = {
@@ -412,16 +512,14 @@
 		};
 		BCB7B0E7214BDC19000036EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB210FE4FF21F85B45DCCABF /* Pods-ios-challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -431,16 +529,14 @@
 		};
 		BCB7B0E8214BDC19000036EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6CCA7B74C524184F35DACAC /* Pods-ios-challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -450,17 +546,14 @@
 		};
 		BCB7B0EA214BDC19000036EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FFFAD15BFDA9CF10B335034 /* Pods-ios-challengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -471,17 +564,14 @@
 		};
 		BCB7B0EB214BDC19000036EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E94429704B22B8DB883590F7 /* Pods-ios-challengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -492,16 +582,13 @@
 		};
 		BCB7B0ED214BDC19000036EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDC3533C94B8DED03ED7B0B /* Pods-ios-challengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -512,16 +599,13 @@
 		};
 		BCB7B0EE214BDC19000036EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C89C1D21CF0B18A9BEE339C /* Pods-ios-challengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
