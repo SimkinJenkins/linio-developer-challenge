@@ -4,12 +4,6 @@ Challenge - iOS Developer
 
 The objective is to create the favorites screen using data from a remote .json file.
 
-# Assets:
-
-- The screen layout can be found at https://zpl.io/2970yda
-- The assets can be found at https://zpl.io/VO4GmXa
-- The .json file can be loaded from https://gist.githubusercontent.com/egteja/98ad43f47d40b0868d8a954385b5f83a/raw/5c00958f81f81d6ba0bb1b1469c905270e8cdfed/wishlist.json
-
 # Description:
 
 - The screen is composed of a header with the screen name (Favoritos) and two different sections.
