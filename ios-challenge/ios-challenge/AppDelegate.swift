@@ -3,7 +3,7 @@
 //  ios-challenge
 //
 //  Created by Patricio Bravo Cisneros on 14/09/18.
-//  Copyright © 2018 Linio. All rights reserved.
+//  Copyright © 2018. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        //create and assign TabBarController
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = FavoritesViewController()
+        DispatchQueue.main.async {
+            self.window?.rootViewController?.viewDidLoad()
+        }
+        window?.makeKeyAndVisible()
+
         return true
     }
 

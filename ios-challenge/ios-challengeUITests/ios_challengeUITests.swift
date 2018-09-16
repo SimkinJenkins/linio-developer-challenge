@@ -3,7 +3,7 @@
 //  ios-challengeUITests
 //
 //  Created by Patricio Bravo Cisneros on 14/09/18.
-//  Copyright © 2018 Linio. All rights reserved.
+//  Copyright © 2018. All rights reserved.
 //
 
 import XCTest
