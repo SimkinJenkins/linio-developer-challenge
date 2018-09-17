@@ -10,7 +10,7 @@ import UIKit
 
 class FavoritesCollectionHeader: UICollectionReusableView {
 
-    static public let reuseId = "ProductCollectionViewCell"
+    static public let reuseId = "FavoritesCollectionHeader"
 
     weak var label: UILabel!
 

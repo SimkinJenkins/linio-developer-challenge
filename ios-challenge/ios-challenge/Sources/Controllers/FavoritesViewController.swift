@@ -44,7 +44,7 @@ class FavoritesViewController: UIViewController {
         collectionView.backgroundColor = .collectionViewBackground
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.reuseId)
+        collectionView.register(ProductsCollectionViewCell.self, forCellWithReuseIdentifier: ProductsCollectionViewCell.reuseId)
         collectionView.register(FavoritesCollectionHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: FavoritesCollectionHeader.reuseId)
     }
 
@@ -67,7 +67,7 @@ extension FavoritesViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.reuseId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCollectionViewCell.reuseId, for: indexPath)
         return cell
     }
 
