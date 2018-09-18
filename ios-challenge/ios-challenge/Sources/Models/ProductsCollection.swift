@@ -27,16 +27,16 @@ import Foundation
 
 struct ProductsCollection {
 
-    let id: String
+    let id: Int
     let name: String
     let description: String
     let linioDefault: Bool
     let owner: User
     let createdAt: String
     let visibility: String
-    let products: [Product]
+    let products: [String: Product]
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
 
         case id
         case name
@@ -55,13 +55,13 @@ extension ProductsCollection: Decodable {
     init(from decoder: Decoder) throws {
 
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decode(String.self, forKey: .id)
+        id = try values.decode(Int.self, forKey: .id)
         name = try values.decode(String.self, forKey: .name)
         description = try values.decode(String.self, forKey: .description)
         linioDefault = try values.decode(Bool.self, forKey: .linioDefault)
         owner = try values.decode(User.self, forKey: .owner)
         createdAt = try values.decode(String.self, forKey: .createdAt)
         visibility = try values.decode(String.self, forKey: .visibility)
-        products = try values.decode([Product].self, forKey: .products)
+        products = try values.decode([String: Product].self, forKey: .products)
     }
 }

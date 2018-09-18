@@ -22,7 +22,7 @@ struct User {
     let email: String
     let linioId: String
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
 
         case name
         case email

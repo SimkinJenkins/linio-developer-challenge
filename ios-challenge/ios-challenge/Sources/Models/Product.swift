@@ -26,9 +26,9 @@ import Foundation
 
 struct Product {
 
-    let id: String
+    let id: Int
     let name: String
-    let wishListPrice: String
+    let wishListPrice: Double
     let slug: String
     let url: String
     let imageUrl: URL
@@ -38,14 +38,14 @@ struct Product {
     let imported: Bool
     let active: Bool
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         
         case id
         case name
         case wishListPrice
         case slug
         case url
-        case imageUrl
+        case imageUrl = "image"
         case linioPlusLevel
         case conditionType
         case freeShipping
@@ -59,9 +59,9 @@ extension Product: Decodable {
     init(from decoder: Decoder) throws {
 
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decode(String.self, forKey: .id)
+        id = try values.decode(Int.self, forKey: .id)
         name = try values.decode(String.self, forKey: .name)
-        wishListPrice = try values.decode(String.self, forKey: .wishListPrice)
+        wishListPrice = try values.decode(Double.self, forKey: .wishListPrice)
         slug = try values.decode(String.self, forKey: .slug)
         url = try values.decode(String.self, forKey: .url)
         imageUrl = try values.decode(URL.self, forKey: .imageUrl)
