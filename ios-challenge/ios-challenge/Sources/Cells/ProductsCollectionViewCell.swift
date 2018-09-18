@@ -10,25 +10,17 @@ import UIKit
 
 class ProductsCollectionViewCell: UICollectionViewCell {
 
+    // it can be used to conform a Protocol for implement dynamic Cells creation
     static public let reuseId = "ProductsCollectionViewCell"
 
+    // Custom contentView
     public var view: ProductCellView!
+
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        setupView(view: ProductCellView(frame: CGRect(origin: .zero, size: frame.size)))
-    }
-
-    func setupView(view: UIView) {
-
-        contentView.addSubview(view)
-        NSLayoutConstraint.activate([
-            view.topAnchor.constraint(equalTo: contentView.topAnchor),
-            view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-        ])
+        initCustomView(ProductCellView(frame: CGRect(origin: .zero, size: frame.size)))
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -47,6 +39,23 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
 
         view.prepareForReuse()
+    }
+
+    // Initialize custom view
+    private func initCustomView(_ view: UIView) {
+
+        guard let productView = view as? ProductCellView else {
+            return
+        }
+
+        contentView.addSubview(view)
+        NSLayoutConstraint.activate([
+            view.topAnchor.constraint(equalTo: contentView.topAnchor),
+            view.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+        ])
+        self.view = productView
     }
 
 }

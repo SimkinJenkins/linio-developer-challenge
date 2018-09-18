@@ -10,15 +10,20 @@ import UIKit
 
 class ProductCellView: UIView {
 
-    private weak var product: UIImageView!
-    private var badges = [UIImageView]()
+    // Product ImageView
+    private weak var productImage: UIImageView!
+
+    // Array containing Badges ImageViews to show
+    private var badgeImages: [UIImageView]!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        // configuring rounded corners
         layer.cornerRadius = 9
         layer.masksToBounds = true
-        initProductImage()
+
+        initProductImageView()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -33,24 +38,30 @@ class ProductCellView: UIView {
         fatalError("Interface Builder is not supported!")
     }
 
+    // Reset imageViews
     public func prepareForReuse() {
 
-        product.image = nil
+        productImage.image = nil
+        badgeImages?.forEach { badge in
+            badge.image = nil
+        }
+        badgeImages = nil
     }
 
-    private func initProductImage() {
+    // Initialize productImageView
+    private func initProductImageView() {
 
-        let image = UIImageView(frame: frame)
-        image.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(image)
+        let imageView = UIImageView(frame: frame)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(imageView)
         NSLayoutConstraint.activate([
-            image.topAnchor.constraint(equalTo: topAnchor),
-            image.bottomAnchor.constraint(equalTo: bottomAnchor),
-            image.leadingAnchor.constraint(equalTo: leadingAnchor),
-            image.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
-        image.backgroundColor = .white
-        product = image
+        imageView.backgroundColor = .white
+        productImage = imageView
     }
 
 }

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ios-challenge/Sources/Controllers/FavoritesViewController.swift"
-            timestampString = "558931994.059404"
+            timestampString = "558938736.0239969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
@@ -33,6 +33,54 @@
             endingLineNumber = "20"
             landmarkName = "init(frame:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ios-challenge/Sources/Cells/ProductCellView.swift"
+            timestampString = "558938736.024232"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "prepareForReuse()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ios_challenge.ProductCellView.prepareForReuse() -&gt; ()"
+                  moduleName = "ios-challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simkin/Documents/work/Simkin/Linio/linio-developer-challenge/ios-challenge/ios-challenge/Sources/Cells/ProductCellView.swift"
+                  timestampString = "558938736.20272"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "298">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.UIImageView) -&gt; () in ios_challenge.ProductCellView.prepareForReuse() -&gt; ()"
+                  moduleName = "ios-challenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/simkin/Documents/work/Simkin/Linio/linio-developer-challenge/ios-challenge/ios-challenge/Sources/Cells/ProductCellView.swift"
+                  timestampString = "558938736.205294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

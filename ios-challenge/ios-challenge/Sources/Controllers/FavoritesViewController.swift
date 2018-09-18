@@ -15,7 +15,6 @@ class FavoritesViewController: UIViewController {
     override func loadView() {
         super.loadView()
 
-        print("Hola")
         initCollectionView()
     }
 
@@ -25,12 +24,12 @@ class FavoritesViewController: UIViewController {
         configureCollectionView()
     }
 
+    // Initialize CollectionView
     func initCollectionView() {
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
-        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -40,6 +39,7 @@ class FavoritesViewController: UIViewController {
         self.collectionView = collectionView
     }
 
+    // Configuring CollectionView
     func configureCollectionView() {
 
         collectionView.backgroundColor = .collectionViewBackground
