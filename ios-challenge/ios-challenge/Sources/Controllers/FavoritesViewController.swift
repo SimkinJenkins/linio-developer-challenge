@@ -11,6 +11,7 @@ import UIKit
 class FavoritesViewController: UIViewController {
 
     weak var collectionView: UICollectionView!
+    var viewModel: FavoritesViewViewModel!
 
     override func loadView() {
         super.loadView()
@@ -45,8 +46,7 @@ class FavoritesViewController: UIViewController {
         collectionView.backgroundColor = .collectionViewBackground
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(ProductsCollectionViewCell.self, forCellWithReuseIdentifier: ProductsCollectionViewCell.reuseId)
-        collectionView.register(FavoritesCollectionHeader.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: FavoritesCollectionHeader.reuseId)
+        viewModel?.registerCellClasses(for: collectionView)
     }
 
 }
@@ -54,37 +54,26 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UICollectionViewDataSource {
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 2
+
+        return viewModel?.numberOfSections ?? 0
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
-        if section == 0 {
-            return 2
-        }
-        return 6
+        return viewModel.getNumberOfItems(for: section)
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCollectionViewCell.reuseId, for: indexPath)
-        return cell
+        return viewModel.getReusableCell(for: collectionView, at: indexPath)
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
         guard kind == UICollectionElementKindSectionHeader else {
             return UICollectionReusableView()
         }
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: FavoritesCollectionHeader.reuseId, for: indexPath) as! FavoritesCollectionHeader
-        view.label.text = indexPath.section == 0 ? "Favoritos" : "Todos mis favoritos (16)"
-        if indexPath.section == 1 {
-            view.label.font = .sectionHeaderSubtitle
-        }
-        return view
+        return viewModel.getReusableSuplementaryView(ofKind: kind, for: collectionView, at: indexPath)
     }
 
 }
@@ -99,13 +88,12 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let width = (collectionView.bounds.size.width * 0.5) - 14
-        return CGSize(width: width, height: width)
+        return viewModel.getItemSize(for: collectionView, at: indexPath)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 
-        return CGSize(width: view.frame.width, height: 48)
+        return viewModel.getHeaderSize(for: collectionView, section: section)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

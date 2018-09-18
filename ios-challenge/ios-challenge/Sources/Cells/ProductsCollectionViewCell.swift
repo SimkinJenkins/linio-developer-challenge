@@ -42,11 +42,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     }
 
     // Initialize custom view
-    private func initCustomView(_ view: UIView) {
-
-        guard let productView = view as? ProductCellView else {
-            return
-        }
+    private func initCustomView(_ view: ProductCellView) {
 
         contentView.addSubview(view)
         NSLayoutConstraint.activate([
@@ -55,7 +51,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
             view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         ])
-        self.view = productView
+        self.view = view
     }
 
 }

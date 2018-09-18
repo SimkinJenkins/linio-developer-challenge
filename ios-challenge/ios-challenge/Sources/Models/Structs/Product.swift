@@ -24,6 +24,8 @@ import Foundation
 }
 */
 
+// Model for Linio User Collection Product
+
 struct Product {
 
     let id: Int

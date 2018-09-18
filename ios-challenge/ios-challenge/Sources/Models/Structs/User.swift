@@ -16,6 +16,8 @@ import Foundation
 }
 */
 
+// Model for Linio User
+
 struct User {
 
     let name: String

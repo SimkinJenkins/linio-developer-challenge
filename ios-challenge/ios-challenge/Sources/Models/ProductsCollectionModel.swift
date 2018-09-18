@@ -25,7 +25,9 @@ import Foundation
 }
 */
 
-struct ProductsCollection {
+// Model for Linio User Collection
+
+struct ProductsCollectionModel {
 
     let id: Int
     let name: String
@@ -50,7 +52,7 @@ struct ProductsCollection {
 
 }
 
-extension ProductsCollection: Decodable {
+extension ProductsCollectionModel: Decodable {
 
     init(from decoder: Decoder) throws {
 

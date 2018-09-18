@@ -1,5 +1,5 @@
 //
-//  FavoritesCollectionHeader.swift
+//  HeaderReusableView.swift
 //  ios-challenge
 //
 //  Created by Patricio Bravo Cisneros on 15/09/18.
@@ -8,10 +8,12 @@
 
 import UIKit
 
-class FavoritesCollectionHeader: UICollectionReusableView {
+class HeaderReusableView: UICollectionReusableView {
 
-    static public let reuseId = "FavoritesCollectionHeader"
+    // it can be used to conform a Protocol for implement dynamic SupplementaryViews creation
+    static public let reuseId = "HeaderReusableView"
 
+    // Label for headers title
     weak var label: UILabel!
 
     override init(frame: CGRect) {
@@ -39,7 +41,8 @@ class FavoritesCollectionHeader: UICollectionReusableView {
         label.text = nil
     }
 
-    func initLabel() {
+    // Initialize header title
+    private func initLabel() {
 
         let label = UILabel(frame: frame)
         label.translatesAutoresizingMaskIntoConstraints = false
