@@ -25,17 +25,23 @@ class ios_challengeTests: XCTestCase {
 
     func testProductsCollectionModel() {
         print("testjson")
+        // 1. given
+        let data = json.data(using: .utf8)!
+
+        // 2. when
         do {
-            model = try JSONDecoder().decode([ProductsCollection].self, from: json) // Decoding our data
+            model = try JSONDecoder().decode([ProductsCollection].self, from: data) // Decoding our data
         } catch {
             print(error)
         }
-        XCTAssertNil(model, "Model can't be nil")
+
+        // 3. then
+        XCTAssertNotNil(model, "Model can't be nil")
         if model != nil {
-            XCTAssertEqual(model.count, 0, "Array is empty")
+            XCTAssertNotEqual(model.count, 0, "Array is empty")
         }
     }
-    
+
     let json = """
 [
   {
@@ -54,6 +60,7 @@ class ios_challengeTests: XCTestCase {
       "OM485HB98ZURLMX": {
         "id": 2286984,
         "name": "Báscula Digital Omron HN 289 - Aqua",
+        "wishListPrice": 399,
         "slug": "ba-scula-digital-omron-hn-289-aqua-x2pl84",
         "url": "/mapi/v1/p/ba-scula-digital-omron-hn-289-aqua-x2pl84",
         "image": "https://i.linio.com/p/c97a50b1c6c7e3bb2c48c1b4104d5975-product.jpg",
@@ -147,7 +154,7 @@ class ios_challengeTests: XCTestCase {
     }
   }
 ]
-""".data(using: .utf8)! // our data in native (JSON) format
+""" // our data in native (JSON) format
 
 
 }
