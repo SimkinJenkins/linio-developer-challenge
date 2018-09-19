@@ -3,7 +3,7 @@
 //  ios-challenge
 //
 //  Created by Patricio Bravo Cisneros on 16/09/18.
-//  Copyright © 2018 Linio. All rights reserved.
+//  Copyright © 2018. All rights reserved.
 //
 
 import Foundation

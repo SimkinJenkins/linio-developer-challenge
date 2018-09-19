@@ -13,6 +13,12 @@ class FavoritesViewController: UIViewController {
     weak var collectionView: UICollectionView!
     var viewModel: FavoritesViewViewModel!
 
+    convenience init(viewModel: FavoritesViewViewModel) {
+        self.init()
+
+        self.viewModel = viewModel
+    }
+
     override func loadView() {
         super.loadView()
 
