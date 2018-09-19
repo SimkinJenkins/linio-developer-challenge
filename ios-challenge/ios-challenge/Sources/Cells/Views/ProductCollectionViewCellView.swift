@@ -21,7 +21,7 @@ class ProductCollectionViewCellView: UIView {
         backgroundColor = .white
         initProductImageViews()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -48,7 +48,7 @@ class ProductCollectionViewCellView: UIView {
     // Initialize productImageView
     private func initProductImageViews() {
 
-        let mainWidthPercent: CGFloat = 0.7
+        let mainWidthPercent: CGFloat = 0.69
         let miniumSpacing: CGFloat = 10
         let imagesTotalWidth = frame.width - (miniumSpacing * 3)
         let mainImageWidth = imagesTotalWidth * mainWidthPercent
@@ -75,7 +75,7 @@ class ProductCollectionViewCellView: UIView {
 
     private func initLabels() {
 
-        title = UILabel(frame: CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
+//        title = UILabel(frame: CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
     }
 
 }
