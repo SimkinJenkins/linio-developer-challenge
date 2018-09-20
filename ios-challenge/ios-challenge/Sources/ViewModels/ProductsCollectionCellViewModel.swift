@@ -39,8 +39,8 @@ class ProductsCollectionCellViewModel: CellViewModelProtocol {
         guard  let productsCell = cell as? ProductsCollectionViewCell else {
             return
         }
-        productsCell.customView.title.text = model.name
-        productsCell.customView.numberOfItems.text = "\(model.products.count)"
+        productsCell.view?.title.text = model.name
+        productsCell.view?.numberOfItems.text = "\(model.products.count)"
     }
 
 }

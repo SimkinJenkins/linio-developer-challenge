@@ -11,12 +11,12 @@ import UIKit
 class ProductsCollectionViewCell: UICollectionViewCell {
 
     // Custom contentView
-    public var customView: ProductCollectionViewCellView!
+    public var view: ProductsCollectionViewCellView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        initCustomView(ProductCollectionViewCellView(frame: CGRect(origin: .zero, size: frame.size)))
+        initCustomView(ProductsCollectionViewCellView(frame: CGRect(origin: .zero, size: frame.size)))
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -34,11 +34,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        customView.prepareForReuse()
+        view.prepareForReuse()
     }
 
     // Initialize custom view
-    private func initCustomView(_ view: ProductCollectionViewCellView) {
+    private func initCustomView(_ view: ProductsCollectionViewCellView) {
 
         contentView.addSubview(view)
         NSLayoutConstraint.activate([
@@ -47,7 +47,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
             view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         ])
-        customView = view
+        self.view = view
     }
 
 }

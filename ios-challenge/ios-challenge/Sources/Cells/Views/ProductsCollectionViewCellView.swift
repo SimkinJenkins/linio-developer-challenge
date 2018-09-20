@@ -1,5 +1,5 @@
 //
-//  ProductCollectionViewCellView.swift
+//  ProductsCollectionViewCellView.swift
 //  ios-challenge
 //
 //  Created by Patricio Bravo Cisneros on 18/09/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProductCollectionViewCellView: UIView {
+class ProductsCollectionViewCellView: UIView {
 
     public var productThumbnails: [UIImageView]!
     

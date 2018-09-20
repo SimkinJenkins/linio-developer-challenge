@@ -27,6 +27,8 @@ class ProductViewCellViewModel: CellViewModelProtocol {
 
     public func config(cell: UICollectionViewCell) {
 
-        
+        guard let productCell = cell as? ProductViewCell else {
+            return
+        }
     }
 }
