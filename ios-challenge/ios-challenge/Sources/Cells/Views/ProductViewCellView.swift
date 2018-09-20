@@ -14,31 +14,9 @@ class ProductViewCellView: UIView {
     public weak var productImage: UIImageView!
 
     // Array containing Badges ImageViews to show
-    public var badgeImages: [UIImageView]!
+    public var badgeImages = [UIImageView]()
 
-    lazy public var plusBadge: UIImageView = {
-        return getIcon(imagename: "product-linio-plus-badge")
-    }()
-
-    lazy public var plus48Badge: UIImageView = {
-        return getIcon(imagename: "product-linio-plus48-badge")
-    }()
-
-    lazy public var refurbished: UIImageView = {
-        return getIcon(imagename: "product-refurbished")
-    }()
-
-    lazy public var new: UIImageView = {
-        return getIcon(imagename: "product-new")
-    }()
-
-    lazy public var imported: UIImageView = {
-        return getIcon(imagename: "product-imported")
-    }()
-
-    lazy public var freeShipping: UIImageView = {
-        return getIcon(imagename: "product-free-shipping")
-    }()
+    private let maxNumberOfIcons = 4
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,6 +26,7 @@ class ProductViewCellView: UIView {
         layer.masksToBounds = true
 
         initProductImageView()
+        initIconImageViews()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -66,11 +45,39 @@ class ProductViewCellView: UIView {
     public func prepareForReuse() {
 
         productImage.image = nil
-        badgeImages?.forEach { badge in
+        badgeImages.forEach { badge in
             badge.image = nil
         }
-        badgeImages = nil
     }
+
+    public func setIcon(image: UIImage, at index: Int) {
+
+        badgeImages[index].image = image
+    }
+
+    lazy public var plusBadgeImage = {
+        return UIImage(named: "product-linio-plus-badge")
+    }()
+
+    lazy public var plus48BadgeImage = {
+        return UIImage(named: "product-linio-plus48-badge")
+    }()
+
+    lazy public var refurbishedImage = {
+        return UIImage(named: "product-refurbished")
+    }()
+
+    lazy public var newImage = {
+        return UIImage(named: "product-new")
+    }()
+
+    lazy public var importedImage = {
+        return UIImage(named: "product-imported")
+    }()
+
+    lazy public var freeShippingImage = {
+        return UIImage(named: "product-free-shipping")
+    }()
 
     // Initialize productImageView
     private func initProductImageView() {
@@ -95,11 +102,16 @@ class ProductViewCellView: UIView {
         addSubview(favoriteIcon)
     }
 
-    private func getIcon(imagename: String) -> UIImageView {
+    private func initIconImageViews() {
 
-        let imageView = UIImageView(image: UIImage(named: imagename))
-        addSubview(imageView)
-        return imageView
+        let imageWidth = 30
+
+        for index in 0...maxNumberOfIcons {
+            let imageView = UIImageView()
+            imageView.frame = CGRect(x: 0, y: imageWidth * index, width: 30, height: 30)
+            addSubview(imageView)
+            badgeImages.append(imageView)
+        }
     }
 
 }

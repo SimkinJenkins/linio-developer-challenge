@@ -31,32 +31,25 @@ class ProductViewCellViewModel: CellViewModelProtocol {
             return
         }
 
-        var icons = [UIImageView]()
+        var icons = [UIImage]()
         switch model.linioPlusLevel {
-        case 1:     icons.append(productCell.view.plusBadge)
-        case 2:     icons.append(productCell.view.plus48Badge)
+        case 1:     icons.append(productCell.view.plusBadgeImage!)
+        case 2:     icons.append(productCell.view.plus48BadgeImage!)
         default:    print("model.linioPlusLevel unknown", model.linioPlusLevel)
         }
         switch model.conditionType {
-        case .new:          icons.append(productCell.view.new)
-        case .refurbished:  icons.append(productCell.view.refurbished)
+        case .new:          icons.append(productCell.view.newImage!)
+        case .refurbished:  icons.append(productCell.view.refurbishedImage!)
         }
         if model.imported {
-            icons.append(productCell.view.imported)
+            icons.append(productCell.view.importedImage!)
         }
         if model.freeShipping {
-            icons.append(productCell.view.freeShipping)
+            icons.append(productCell.view.freeShippingImage!)
         }
-        setupPositions(for: icons)
-        productCell.view.badgeImages = icons
-    }
 
-    private func setupPositions(for icons: [UIImageView]) {
-
-        var yPos: CGFloat = 0
-        for icon in icons {
-            icon.frame.origin.y = yPos
-            yPos += icon.frame.height
+        for (index, image) in icons.enumerated() {
+            productCell.view.setIcon(image: image, at: index)
         }
     }
 
