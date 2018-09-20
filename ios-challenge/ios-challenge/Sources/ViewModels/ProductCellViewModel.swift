@@ -44,7 +44,6 @@ class ProductViewCellViewModel: CellViewModelProtocol {
         if model.imported {
             icons.append(productCell.view.imported)
         }
-        print(model.freeShipping)
         if model.freeShipping {
             icons.append(productCell.view.freeShipping)
         }
