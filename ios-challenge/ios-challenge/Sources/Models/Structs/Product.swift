@@ -30,6 +30,13 @@ enum ProductConditionType: String {
     case refurbished
 }
 
+enum LinioPlusLevel: UInt {
+
+    case none = 0
+    case plus = 1
+    case plus48 = 2
+}
+
 struct Product {
 
     let id: Int
@@ -38,7 +45,7 @@ struct Product {
     let slug: String
     let url: String
     let imageUrl: URL
-    let linioPlusLevel: UInt
+    let linioPlusLevel: LinioPlusLevel
     let conditionType: ProductConditionType
     let freeShipping: Bool
     let imported: Bool
@@ -71,7 +78,7 @@ extension Product: Decodable {
         slug = try values.decode(String.self, forKey: .slug)
         url = try values.decode(String.self, forKey: .url)
         imageUrl = try values.decode(URL.self, forKey: .imageUrl)
-        linioPlusLevel = try values.decode(UInt.self, forKey: .linioPlusLevel)
+        linioPlusLevel = LinioPlusLevel(rawValue: try values.decode(UInt.self, forKey: .linioPlusLevel))!
         conditionType = ProductConditionType(rawValue: try values.decode(String.self, forKey: .conditionType))!
         freeShipping = try values.decode(Bool.self, forKey: .freeShipping)
         imported = try values.decode(Bool.self, forKey: .imported)

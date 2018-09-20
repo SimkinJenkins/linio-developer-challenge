@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ProductViewCellViewModel: CellViewModelProtocol {
 
@@ -33,9 +34,9 @@ class ProductViewCellViewModel: CellViewModelProtocol {
 
         var icons = [UIImage]()
         switch model.linioPlusLevel {
-        case 1:     icons.append(productCell.view.plusBadgeImage!)
-        case 2:     icons.append(productCell.view.plus48BadgeImage!)
-        default:    print("model.linioPlusLevel unknown", model.linioPlusLevel)
+        case .none:     print("None")
+        case .plus:     icons.append(productCell.view.plusBadgeImage!)
+        case .plus48:   icons.append(productCell.view.plus48BadgeImage!)
         }
         switch model.conditionType {
         case .new:          icons.append(productCell.view.newImage!)
@@ -51,6 +52,8 @@ class ProductViewCellViewModel: CellViewModelProtocol {
         for (index, image) in icons.enumerated() {
             productCell.view.setIcon(image: image, at: index)
         }
+
+        productCell.view.productImage.af_setImage(withURL: model.imageUrl)
     }
 
 }

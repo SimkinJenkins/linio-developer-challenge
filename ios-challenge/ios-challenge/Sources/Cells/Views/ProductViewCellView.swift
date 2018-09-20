@@ -13,6 +13,30 @@ class ProductViewCellView: UIView {
     // Product ImageView
     public weak var productImage: UIImageView!
 
+    lazy public var plusBadgeImage = {
+        return UIImage(named: "product-linio-plus-badge")
+    }()
+    
+    lazy public var plus48BadgeImage = {
+        return UIImage(named: "product-linio-plus48-badge")
+    }()
+    
+    lazy public var refurbishedImage = {
+        return UIImage(named: "product-refurbished")
+    }()
+    
+    lazy public var newImage = {
+        return UIImage(named: "product-new")
+    }()
+    
+    lazy public var importedImage = {
+        return UIImage(named: "product-imported")
+    }()
+    
+    lazy public var freeShippingImage = {
+        return UIImage(named: "product-free-shipping")
+    }()
+
     // Array containing Badges ImageViews to show
     public var badgeImages = [UIImageView]()
 
@@ -55,30 +79,6 @@ class ProductViewCellView: UIView {
         badgeImages[index].image = image
     }
 
-    lazy public var plusBadgeImage = {
-        return UIImage(named: "product-linio-plus-badge")
-    }()
-
-    lazy public var plus48BadgeImage = {
-        return UIImage(named: "product-linio-plus48-badge")
-    }()
-
-    lazy public var refurbishedImage = {
-        return UIImage(named: "product-refurbished")
-    }()
-
-    lazy public var newImage = {
-        return UIImage(named: "product-new")
-    }()
-
-    lazy public var importedImage = {
-        return UIImage(named: "product-imported")
-    }()
-
-    lazy public var freeShippingImage = {
-        return UIImage(named: "product-free-shipping")
-    }()
-
     // Initialize productImageView
     private func initProductImageView() {
 
@@ -92,6 +92,7 @@ class ProductViewCellView: UIView {
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
+        imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .white
         productImage = imageView
 

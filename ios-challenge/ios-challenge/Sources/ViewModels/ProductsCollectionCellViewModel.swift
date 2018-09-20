@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ProductsCollectionCellViewModel: CellViewModelProtocol {
 
@@ -34,6 +35,7 @@ class ProductsCollectionCellViewModel: CellViewModelProtocol {
         return Array(model.products)[index].value
     }
 
+    // Mark : CellViewModelProtocol
     public func config(cell: UICollectionViewCell) {
 
         guard  let productsCell = cell as? ProductsCollectionViewCell else {
@@ -41,6 +43,12 @@ class ProductsCollectionCellViewModel: CellViewModelProtocol {
         }
         productsCell.view?.title.text = model.name
         productsCell.view?.numberOfItems.text = "\(model.products.count)"
+
+        for (index, product) in model.products.enumerated() {
+            if index < 3 {
+                productsCell.view?.productThumbnails[index].af_setImage(withURL: product.value.imageUrl)
+            }
+        }
     }
 
 }
