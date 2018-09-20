@@ -24,7 +24,11 @@ import Foundation
 }
 */
 
-// Model for Linio User Collection Product
+enum ProductConditionType: String {
+
+    case new
+    case refurbished
+}
 
 struct Product {
 
@@ -35,7 +39,7 @@ struct Product {
     let url: String
     let imageUrl: URL
     let linioPlusLevel: UInt
-    let conditionType: String
+    let conditionType: ProductConditionType
     let freeShipping: Bool
     let imported: Bool
     let active: Bool
@@ -68,7 +72,7 @@ extension Product: Decodable {
         url = try values.decode(String.self, forKey: .url)
         imageUrl = try values.decode(URL.self, forKey: .imageUrl)
         linioPlusLevel = try values.decode(UInt.self, forKey: .linioPlusLevel)
-        conditionType = try values.decode(String.self, forKey: .conditionType)
+        conditionType = ProductConditionType(rawValue: try values.decode(String.self, forKey: .conditionType))!
         freeShipping = try values.decode(Bool.self, forKey: .freeShipping)
         imported = try values.decode(Bool.self, forKey: .imported)
         active = try values.decode(Bool.self, forKey: .active)

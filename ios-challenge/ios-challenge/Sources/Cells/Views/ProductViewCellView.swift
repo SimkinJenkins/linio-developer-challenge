@@ -11,10 +11,34 @@ import UIKit
 class ProductViewCellView: UIView {
 
     // Product ImageView
-    private weak var productImage: UIImageView!
+    public weak var productImage: UIImageView!
 
     // Array containing Badges ImageViews to show
-    private var badgeImages: [UIImageView]!
+    public var badgeImages: [UIImageView]!
+
+    lazy public var plusBadge: UIImageView = {
+        return getIcon(imagename: "product-linio-plus-badge")
+    }()
+
+    lazy public var plus48Badge: UIImageView = {
+        return getIcon(imagename: "product-linio-plus48-badge")
+    }()
+
+    lazy public var refurbished: UIImageView = {
+        return getIcon(imagename: "product-refurbished")
+    }()
+
+    lazy public var new: UIImageView = {
+        return getIcon(imagename: "product-new")
+    }()
+
+    lazy public var imported: UIImageView = {
+        return getIcon(imagename: "product-imported")
+    }()
+
+    lazy public var freeShipping: UIImageView = {
+        return getIcon(imagename: "product-free-shipping")
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,6 +75,7 @@ class ProductViewCellView: UIView {
     // Initialize productImageView
     private func initProductImageView() {
 
+        // adding product thumbnail
         let imageView = UIImageView(frame: frame)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(imageView)
@@ -62,6 +87,19 @@ class ProductViewCellView: UIView {
         ])
         imageView.backgroundColor = .white
         productImage = imageView
+
+        // adding favorite icon
+        let spacing: CGFloat = 4
+        let favoriteIcon = UIImageView(image: UIImage(named: "product-favorite"))
+        favoriteIcon.frame.origin = CGPoint(x: frame.width - favoriteIcon.frame.width - spacing, y: spacing)
+        addSubview(favoriteIcon)
+    }
+
+    private func getIcon(imagename: String) -> UIImageView {
+
+        let imageView = UIImageView(image: UIImage(named: imagename))
+        addSubview(imageView)
+        return imageView
     }
 
 }
