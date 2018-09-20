@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FavoritesViewViewModel {
 
@@ -26,9 +27,7 @@ class FavoritesViewViewModel {
     convenience init(userCollections: [ProductsCollection]) {
         self.init()
 
-        let sections = [self.getCollectionsSection(userCollections: userCollections),
-                         self.getAllProductsSection(userCollections: userCollections)]
-        model = FavoritesViewModel(sections: sections)
+        initModel(userCollections)
     }
 
     public func getNumberOfItems(for section: Int) -> Int {
@@ -76,6 +75,30 @@ class FavoritesViewViewModel {
             return
         }
         viewModel.config(cell: cell)
+    }
+
+    public func loadData(completion: (() -> Void)?) {
+        if model?.url == nil {
+            return
+        }
+        Alamofire.request(model.url).responseString { response in
+
+            
+            var userCollections: [ProductsCollection]!
+            do {
+                userCollections = try JSONDecoder().decode([ProductsCollection].self, from: response.data!)
+            } catch {
+                print(error)
+            }
+            self.initModel(userCollections)
+            completion?()
+        }
+    }
+
+    private func initModel(_ userCollections: [ProductsCollection]) {
+        let sections = [self.getCollectionsSection(userCollections: userCollections),
+                        self.getAllProductsSection(userCollections: userCollections)]
+        model = FavoritesViewModel(sections: sections)
     }
 
     private func getViewModel(at indexPath: IndexPath) -> CellViewModelProtocol? {

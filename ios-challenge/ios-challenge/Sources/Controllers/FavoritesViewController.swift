@@ -29,6 +29,9 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
 
         configureCollectionView()
+        viewModel.loadData(completion: {
+            self.collectionView.reloadData()
+        })
     }
 
     // Initialize CollectionView

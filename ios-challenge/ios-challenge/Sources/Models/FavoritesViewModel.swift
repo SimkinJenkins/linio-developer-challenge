@@ -13,7 +13,13 @@ struct FavoritesViewModel {
     static let favoritesSectionTitle = "Favoritos"
     static let allProductsSectionTitle = "Todos mis favoritos"
 
-    var sections: [CollectionViewSection]!
+    public var sections: [CollectionViewSection]!
+    public var url: URL!
+
+    init(url: URL) {
+
+        self.url = url
+    }
 
     init(sections: [CollectionViewSection]) {
 

@@ -20,14 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //create and assign root viewController
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let data = json.data(using: .utf8)!
-        do {
-            userCollections = try JSONDecoder().decode([ProductsCollection].self, from: data)
-        } catch {
-            print(error)
-        }
-
-        let favoritesViewModel = FavoritesViewViewModel(userCollections: userCollections)
+        let url = "https://gist.githubusercontent.com/egteja/98ad43f47d40b0868d8a954385b5f83a/raw/5c00958f81f81d6ba0bb1b1469c905270e8cdfed/wishlist.json"
+        let favoritesModel = FavoritesViewModel(url: URL(string: url)!)
+        let favoritesViewModel = FavoritesViewViewModel(model: favoritesModel)
         let favoritesView = FavoritesViewController(viewModel: favoritesViewModel)
         window?.rootViewController = favoritesView
         DispatchQueue.main.async {
