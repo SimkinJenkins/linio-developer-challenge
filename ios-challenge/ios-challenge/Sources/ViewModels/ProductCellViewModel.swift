@@ -11,7 +11,6 @@ import AlamofireImage
 
 class ProductViewCellViewModel: CellViewModelProtocol {
 
-    // it can be used to conform a Protocol for implement dynamic SupplementaryViews creation
     static var reuseId = "ProductViewCell"
 
     var reuseId: String {
@@ -25,6 +24,8 @@ class ProductViewCellViewModel: CellViewModelProtocol {
 
         self.model = model
     }
+
+    // Mark : CellViewModelProtocol
 
     public func config(cell: UICollectionViewCell) {
 
@@ -54,6 +55,11 @@ class ProductViewCellViewModel: CellViewModelProtocol {
         }
 
         productCell.view.productImage.af_setImage(withURL: model.imageUrl)
+    }
+
+    public func didSelect() {
+
+        print("didSelect")
     }
 
 }

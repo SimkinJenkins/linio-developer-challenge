@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Contains Favorites UICollectionView info
 struct FavoritesViewModel {
 
     static let favoritesSectionTitle = "Favoritos"
@@ -26,12 +27,4 @@ struct FavoritesViewModel {
         self.sections = sections
     }
 
-}
-
-struct CollectionViewSection {
-
-    var headerTitle: String!
-    var cells: [CellViewModelProtocol]!
-
-    var headerFont: UIFont = .sectionHeaderTitle
 }

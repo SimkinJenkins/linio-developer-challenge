@@ -10,7 +10,6 @@ import UIKit
 
 class HeaderReusableView: UICollectionReusableView {
 
-    // it can be used to conform a Protocol for implement dynamic SupplementaryViews creation
     static public let reuseId = "HeaderReusableView"
 
     // Label for headers title

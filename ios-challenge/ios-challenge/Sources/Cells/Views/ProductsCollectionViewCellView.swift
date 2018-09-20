@@ -95,6 +95,7 @@ class ProductsCollectionViewCellView: UIView {
         }
     }
 
+    // Initialize Title and Subtitle
     private func initLabels() {
 
         let infoSectionHeight = frame.height - thumbnailsSectionHeight

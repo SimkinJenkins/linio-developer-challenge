@@ -37,6 +37,8 @@ enum LinioPlusLevel: UInt {
     case plus48 = 2
 }
 
+// Model for linio product
+
 struct Product {
 
     let id: Int

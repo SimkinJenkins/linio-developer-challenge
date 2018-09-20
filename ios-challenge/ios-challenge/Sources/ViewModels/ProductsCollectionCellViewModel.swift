@@ -51,4 +51,9 @@ class ProductsCollectionCellViewModel: CellViewModelProtocol {
         }
     }
 
+    public func didSelect() {
+
+        print("didSelect")
+    }
+
 }

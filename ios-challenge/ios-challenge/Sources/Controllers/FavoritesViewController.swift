@@ -94,6 +94,10 @@ extension FavoritesViewController: UICollectionViewDelegate {
         viewModel.config(cell: cell, at: indexPath)
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        viewModel.didSelect(at: indexPath)
+    }
 }
 
 extension FavoritesViewController: UICollectionViewDelegateFlowLayout {

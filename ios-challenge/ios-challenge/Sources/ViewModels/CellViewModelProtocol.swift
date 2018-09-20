@@ -10,7 +10,11 @@ import UIKit
 
 protocol CellViewModelProtocol {
 
+    // a value for reuseIdentifier
     var reuseId: String { get }
 
+    // config cell on UICollectionView willDisplay
     func config(cell: UICollectionViewCell)
+    // on select
+    func didSelect()
 }

@@ -11,6 +11,7 @@ import Alamofire
 
 class FavoritesViewViewModel {
 
+    // number of sections for CollectionView
     public var numberOfSections: Int {
 
         return model.sections?.count ?? 0
@@ -35,6 +36,7 @@ class FavoritesViewViewModel {
         return model.sections?[section].cells?.count ?? 0
     }
 
+    // Manual Cells register
     public func registerCellClasses(for collectionView: UICollectionView) {
 
         collectionView.register(ProductsCollectionViewCell.self, forCellWithReuseIdentifier: ProductsCollectionCellViewModel.reuseId)
@@ -42,6 +44,7 @@ class FavoritesViewViewModel {
         collectionView.register(HeaderReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HeaderReusableView.reuseId)
     }
 
+    // Mark: UICollectionView-ViewModel Methods
     public func getReusableCell(for collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
 
         guard let viewModel = getViewModel(at: indexPath) else {
@@ -77,6 +80,15 @@ class FavoritesViewViewModel {
         viewModel.config(cell: cell)
     }
 
+    public func didSelect(at indexPath: IndexPath) {
+
+        guard let viewModel = getViewModel(at: indexPath) else {
+            return
+        }
+        viewModel.didSelect()
+    }
+
+    // Mark: Networking
     public func loadData(completion: (() -> Void)?) {
         if model?.url == nil {
             return
@@ -95,18 +107,21 @@ class FavoritesViewViewModel {
         }
     }
 
+    // Initialize model with UserProductsCollection array
     private func initModel(_ userCollections: [ProductsCollection]) {
-        let sections = [self.getCollectionsSection(userCollections: userCollections),
-                        self.getAllProductsSection(userCollections: userCollections)]
+        let sections = [self.initCollectionsSection(userCollections: userCollections),
+                        self.initAllProductsSection(userCollections: userCollections)]
         model = FavoritesViewModel(sections: sections)
     }
 
+    // Get correspondent viewModel
     private func getViewModel(at indexPath: IndexPath) -> CellViewModelProtocol? {
 
         return model.sections?[indexPath.section].cells[indexPath.row]
     }
 
-    private func getCollectionsSection(userCollections: [ProductsCollection]) -> CollectionViewSection {
+    // Initialize section User Products Collection starting api data
+    private func initCollectionsSection(userCollections: [ProductsCollection]) -> CollectionViewSection {
 
         let productCollectionCellViewModel = userCollections.map { userCollection in
             return ProductsCollectionCellViewModel(model: userCollection)
@@ -114,7 +129,8 @@ class FavoritesViewViewModel {
         return CollectionViewSection(headerTitle: "Favoritos", cells: productCollectionCellViewModel, headerFont: .sectionHeaderTitle)
     }
 
-    private func getAllProductsSection(userCollections: [ProductsCollection]) -> CollectionViewSection {
+    // Initialize section All Products starting api data
+    private func initAllProductsSection(userCollections: [ProductsCollection]) -> CollectionViewSection {
 
         var viewModels = [CellViewModelProtocol]()
         for userCollection in userCollections {

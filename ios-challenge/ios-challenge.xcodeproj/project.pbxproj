@@ -32,6 +32,7 @@
 		BC506A0A21540571001F120D /* ndIc30InternationalSquare.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BC506A0921540570001F120D /* ndIc30InternationalSquare.pdf */; };
 		BC506A0C2154059F001F120D /* ndIc30FreeShippingSquare.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BC506A0B2154059F001F120D /* ndIc30FreeShippingSquare.pdf */; };
 		BC506A0E21540829001F120D /* ndIc24FavOnPink.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BC506A0D21540829001F120D /* ndIc24FavOnPink.pdf */; };
+		BC506A1021542986001F120D /* CollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC506A0F21542986001F120D /* CollectionViewSection.swift */; };
 		BCB7B0C2214BDC16000036EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7B0C1214BDC16000036EE /* AppDelegate.swift */; };
 		BCB7B0C9214BDC18000036EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB7B0C8214BDC18000036EE /* Assets.xcassets */; };
 		BCB7B0CC214BDC18000036EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB7B0CA214BDC18000036EE /* LaunchScreen.storyboard */; };
@@ -88,6 +89,7 @@
 		BC506A0921540570001F120D /* ndIc30InternationalSquare.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ndIc30InternationalSquare.pdf; sourceTree = "<group>"; };
 		BC506A0B2154059F001F120D /* ndIc30FreeShippingSquare.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ndIc30FreeShippingSquare.pdf; sourceTree = "<group>"; };
 		BC506A0D21540829001F120D /* ndIc24FavOnPink.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ndIc24FavOnPink.pdf; sourceTree = "<group>"; };
+		BC506A0F21542986001F120D /* CollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewSection.swift; sourceTree = "<group>"; };
 		BCB7B0BE214BDC16000036EE /* ios-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB7B0C1214BDC16000036EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCB7B0C8214BDC18000036EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				BC5069F62150D2FF001F120D /* Structs */,
 				BC5069ED214F5B6D001F120D /* ProductsCollectionModel.swift */,
 				BC5069F72150D337001F120D /* FavoritesViewModel.swift */,
+				BC506A0F21542986001F120D /* CollectionViewSection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				BC07B3C9214BE8350052F3A2 /* FavoritesViewController.swift in Sources */,
 				BC5069FC2151D35E001F120D /* ProductCellViewModel.swift in Sources */,
 				BC506A002151E113001F120D /* ProductsCollectionViewCellView.swift in Sources */,
+				BC506A1021542986001F120D /* CollectionViewSection.swift in Sources */,
 				BC07B3CD214C70400052F3A2 /* UIColor+Additions.swift in Sources */,
 				BC5069F52150D07F001F120D /* FavoritesViewViewModel.swift in Sources */,
 				BC5069FA2150D3F3001F120D /* CellViewModelProtocol.swift in Sources */,
@@ -696,7 +700,10 @@
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -713,7 +720,10 @@
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challenge/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -730,7 +740,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -748,7 +762,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -765,7 +783,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -782,7 +804,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FUSZMYVQ5X;
 				INFOPLIST_FILE = "ios-challengeUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.linio.ios-challengeUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
