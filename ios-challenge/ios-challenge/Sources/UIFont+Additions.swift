@@ -2,7 +2,7 @@
 //  UIFont+Additions.swift
 //  Mis Favoritos
 //
-//  Generated on Zeplin. (14/9/2018).
+//  Generated on Zeplin. (20/9/2018).
 //  Copyright (c) 2018 __MyCompanyName__. All rights reserved.
 //
 
@@ -14,15 +14,11 @@ extension UIFont {
     return UIFont.systemFont(ofSize: 22.0, weight: .bold)
   }
 
-  class var sectionTitle: UIFont {
+  class var sectionHeaderTitle: UIFont {
     return UIFont.systemFont(ofSize: 22.0, weight: .bold)
   }
 
   class var headingHighlight1: UIFont {
-    return UIFont.systemFont(ofSize: 22.0, weight: .bold)
-  }
-
-  class var sectionHeaderTitle: UIFont {
     return UIFont.systemFont(ofSize: 22.0, weight: .bold)
   }
 
@@ -42,7 +38,11 @@ extension UIFont {
     return UIFont.systemFont(ofSize: 14.0, weight: .regular)
   }
 
-  class var collectionCellCount: UIFont {
+  class var userCollectionSubtitle: UIFont {
+    return UIFont.systemFont(ofSize: 14.0, weight: .regular)
+  }
+
+  class var userCollectionTitle: UIFont {
     return UIFont.systemFont(ofSize: 14.0, weight: .regular)
   }
 

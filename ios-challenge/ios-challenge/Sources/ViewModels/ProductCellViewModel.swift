@@ -25,4 +25,8 @@ class ProductViewCellViewModel: CellViewModelProtocol {
         self.model = model
     }
 
+    public func config(cell: UICollectionViewCell) {
+
+        
+    }
 }

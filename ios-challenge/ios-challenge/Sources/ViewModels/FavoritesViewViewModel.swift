@@ -45,7 +45,7 @@ class FavoritesViewViewModel {
 
     public func getReusableCell(for collectionView: UICollectionView, at indexPath: IndexPath) -> UICollectionViewCell {
 
-        guard let viewModel = getViewModel(for: indexPath) else {
+        guard let viewModel = getViewModel(at: indexPath) else {
             return UICollectionViewCell()
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.reuseId, for: indexPath)
@@ -70,7 +70,15 @@ class FavoritesViewViewModel {
         return CGSize(width: collectionView.frame.width, height: 48)
     }
 
-    private func getViewModel(for indexPath: IndexPath) -> CellViewModelProtocol? {
+    public func config(cell: UICollectionViewCell, at indexPath: IndexPath) {
+
+        guard let viewModel = getViewModel(at: indexPath) else {
+            return
+        }
+        viewModel.config(cell: cell)
+    }
+
+    private func getViewModel(at indexPath: IndexPath) -> CellViewModelProtocol? {
 
         return model.sections?[indexPath.section].cells[indexPath.row]
     }

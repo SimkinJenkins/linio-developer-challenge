@@ -10,72 +10,108 @@ import UIKit
 
 class ProductCollectionViewCellView: UIView {
 
-    private var productImages: [UIImageView]!
+    public var productThumbnails: [UIImageView]!
+    
+    public weak var title: UILabel!
+    public weak var numberOfItems: UILabel!
 
-    private weak var title: UILabel!
-    private weak var numberOfItems: UILabel!
+    // Internal spacing between cell elements
+    private let miniumSpacing: CGFloat = 8
+    // Auxiliar value to calculate bigThumb size
+    private let widthPercent: CGFloat = 0.69
+    // Total width available to calculate thumbnails size
+    private var totalWidthForImages: CGFloat!
+    // Big Thumb size
+    private var bigThumbnailWidth: CGFloat!
+    // Thumbnails section background height
+    private var thumbnailsSectionHeight: CGFloat!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        // Calculating thumbnails width
+        totalWidthForImages = frame.width - (miniumSpacing * 3)
+        bigThumbnailWidth = totalWidthForImages * widthPercent
+        thumbnailsSectionHeight = bigThumbnailWidth + (miniumSpacing * 2)
+
         backgroundColor = .white
         initProductImageViews()
+        initLabels()
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+
         fatalError("Interface Builder is not supported!")
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         fatalError("Interface Builder is not supported!")
     }
     
     // Reset imageViews
     public func prepareForReuse() {
 
-        productImages?.forEach { badge in
+        productThumbnails?.forEach { badge in
             badge.image = nil
         }
-        productImages = nil
         title?.text = nil
         numberOfItems.text = nil
     }
-    
+
     // Initialize productImageView
     private func initProductImageViews() {
 
-        let mainWidthPercent: CGFloat = 0.69
-        let miniumSpacing: CGFloat = 10
-        let imagesTotalWidth = frame.width - (miniumSpacing * 3)
-        let mainImageWidth = imagesTotalWidth * mainWidthPercent
+        // Total width available to calculate thumbnails size
+        let totalWidthForImages = frame.width - (miniumSpacing * 3)
+        // Auxiliar value to calculate bigThumb size
+        let widthPercent: CGFloat = 0.69
+        // Big Thumb size
+        let bigThumbnailWidth = totalWidthForImages * widthPercent
 
-        let background = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: mainImageWidth + (miniumSpacing * 2)))
+        // Gray background for thumbnails section
+        let background = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: thumbnailsSectionHeight))
         background.backgroundColor = .componentsBackground
         addSubview(background)
 
-        let mainImageView = UIImageView(frame: CGRect(x: miniumSpacing, y: miniumSpacing, width: mainImageWidth , height: mainImageWidth))
+        // Left thumbnail
+        let bigThumbnailView = UIImageView(frame: CGRect(x: miniumSpacing, y: miniumSpacing, width: bigThumbnailWidth, height: bigThumbnailWidth))
 
-        let secondaryImagesWidth = imagesTotalWidth - mainImageWidth
-        let secondaryTopImage = UIImageView(frame: CGRect(x: mainImageView.frame.maxX + miniumSpacing, y: miniumSpacing, width: secondaryImagesWidth, height: secondaryImagesWidth))
-        let secondaryBottomImage = UIImageView(frame: CGRect(x: secondaryTopImage.frame.minX, y: secondaryTopImage.frame.maxY + miniumSpacing, width: secondaryImagesWidth, height: secondaryImagesWidth))
+        // Right thumbnails
+        let smallThumbnailsWidth = totalWidthForImages - bigThumbnailWidth
+        let sThumbnailTopImage = UIImageView(frame: CGRect(x: bigThumbnailView.frame.maxX + miniumSpacing, y: miniumSpacing, width: smallThumbnailsWidth, height: smallThumbnailsWidth))
+        let sThumbnailBottomImage = UIImageView(frame: CGRect(x: sThumbnailTopImage.frame.minX, y: sThumbnailTopImage.frame.maxY + miniumSpacing, width: smallThumbnailsWidth, height: smallThumbnailsWidth))
 
-        productImages = [mainImageView, secondaryTopImage, secondaryBottomImage]
+        productThumbnails = [bigThumbnailView, sThumbnailTopImage, sThumbnailBottomImage]
 
-        for image in productImages {
-            addSubview(image)
+        // Setting thumbnails
+        for image in productThumbnails {
             image.backgroundColor = .white
             image.layer.cornerRadius = 5
             image.layer.masksToBounds = true
+            addSubview(image)
         }
     }
 
     private func initLabels() {
 
-//        title = UILabel(frame: CGRect(x: <#T##CGFloat#>, y: <#T##CGFloat#>, width: <#T##CGFloat#>, height: <#T##CGFloat#>))
+        let infoSectionHeight = frame.height - thumbnailsSectionHeight
+        let labelsHeight = (infoSectionHeight - (miniumSpacing * 2)) * 0.5
+
+        let title = UILabel(frame: CGRect(x: miniumSpacing, y: thumbnailsSectionHeight + miniumSpacing, width: frame.width - (miniumSpacing * 2), height: labelsHeight))
+        title.font = .userCollectionTitle
+        title.textColor = .textColor
+        addSubview(title)
+        self.title = title
+
+        let subtitle = UILabel(frame: CGRect(x: miniumSpacing, y: title.frame.maxY, width: title.frame.width, height: labelsHeight))
+        subtitle.font = .userCollectionSubtitle
+        subtitle.textColor = .softText
+        addSubview(subtitle)
+        self.numberOfItems = subtitle
+
     }
 
 }

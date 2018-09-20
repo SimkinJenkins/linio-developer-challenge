@@ -34,4 +34,13 @@ class ProductsCollectionCellViewModel: CellViewModelProtocol {
         return Array(model.products)[index].value
     }
 
+    public func config(cell: UICollectionViewCell) {
+
+        guard  let productsCell = cell as? ProductsCollectionViewCell else {
+            return
+        }
+        productsCell.customView.title.text = model.name
+        productsCell.customView.numberOfItems.text = "\(model.products.count)"
+    }
+
 }

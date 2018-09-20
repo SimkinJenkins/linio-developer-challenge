@@ -11,8 +11,7 @@ import UIKit
 class ProductsCollectionViewCell: UICollectionViewCell {
 
     // Custom contentView
-    public var view: ProductCollectionViewCellView!
-
+    public var customView: ProductCollectionViewCellView!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,7 +34,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        view.prepareForReuse()
+        customView.prepareForReuse()
     }
 
     // Initialize custom view
@@ -48,7 +47,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
             view.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             view.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
         ])
-        self.view = view
+        customView = view
     }
 
 }

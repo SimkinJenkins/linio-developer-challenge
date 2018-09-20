@@ -11,4 +11,6 @@ import UIKit
 protocol CellViewModelProtocol {
 
     var reuseId: String { get }
+
+    func config(cell: UICollectionViewCell)
 }
